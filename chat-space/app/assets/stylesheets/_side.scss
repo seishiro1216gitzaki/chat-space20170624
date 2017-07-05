@@ -1,0 +1,64 @@
+@import "./variables";
+
+.chat-side {
+  width: 300px;
+   height: 100vh;
+   background-color: #2f3e51;
+   float: left;
+
+    .side__user {
+     height: 15%;
+     width: 100%;
+     background-color: #253141;
+
+    .side__user__content {
+       height: 100px;
+       margin: auto 0;
+       line-height: 100px;
+
+    .side__user-name {
+         color: $side-text;
+         font-size: 16px;
+         font-weight: bold;
+         margin: 0 20px;
+         position: relative;
+         padding-top: 10px;
+         display: inline-block;
+       }
+
+    .side__user-new-group {
+         position: relative;
+         display: inline-block;
+       }
+
+    .side__user-edit-user{
+         position: relative;
+         display: inline-block;
+         margin-left: 100px;
+       }
+
+   .fa {
+         color: white;
+       }
+
+     }
+   }
+   .side__groups {
+     height: 85%;
+     width: 100%;
+     float: left;
+     .side__groups-content{
+       padding: 20px;
+       .side__group-name {
+         font-size: 15px;
+         color: $side-text;
+       }
+       .side__group-message {
+         font-size: 11px;
+         color: $side-text;
+
+       }
+     }
+   }
+ }
+
