@@ -5,7 +5,7 @@
 .chat-side
   .side__user
     .side__user__content
-      .side__user-name Seishiro
+      .side__user-name= current_user.name
       %a.side__user-new-group{href: "https://www.google.co.jp/"}
         %i.fa.fa-pencil-square-o
       %a.side__user-edit-user{href: "/users/:id/edit"}
