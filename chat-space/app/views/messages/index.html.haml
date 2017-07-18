@@ -10,15 +10,12 @@
           %i.fa.fa-cog
 
   .side__groups
-    .side__groups-content
-      .side__group-name グループ名
-      .side__group-message メッセージ
-    .side__groups-content
-      .side__group-name wowow
-      .side__group-message まだメッセージはありません
-    .side__groups-content
-      .side__group-name sample
-      .side__group-message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side__groups-content
+        .side__group-name
+          = group.name
+        .side__group-message 
+          メッセージ
 
 .main
   .header
