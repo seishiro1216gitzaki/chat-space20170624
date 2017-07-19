@@ -4,7 +4,8 @@
   .header
     .header__name Groupname
     .group-edit
-      = link_to 'Edit','/groups/:id/edit'
+      = link_to 'Edit',edit_group_path(:id)
+
     .header__members Member: Steve cook
 
   .body
