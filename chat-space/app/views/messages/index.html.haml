@@ -1,24 +1,4 @@
-.chat-side
-  .side__user
-    .side__user__content
-      .side__user-name= current_user.name
-      %a.side__user-new-group
-        = link_to new_group_path do
-          %i.fa.fa-pencil-square-o
-      %a.side__user-edit-user
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
-
-  .side__groups
-    .side__groups-content
-      .side__group-name グループ名
-      .side__group-message メッセージ
-    .side__groups-content
-      .side__group-name wowow
-      .side__group-message まだメッセージはありません
-    .side__groups-content
-      .side__group-name sample
-      .side__group-message まだメッセージはありません
+= render 'sidebar'
 
 .main
   .header
