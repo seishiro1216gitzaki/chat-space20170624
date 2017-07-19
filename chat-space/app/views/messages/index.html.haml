@@ -3,7 +3,9 @@
 .main
   .header
     .header__name Groupname
-    %link_to.group-edit{href: " "} Edit
+    .group-edit
+      = link_to 'Edit',edit_group_path(:id)
+
     .header__members Member: Steve cook
 
   .body
