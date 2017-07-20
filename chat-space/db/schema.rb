@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715031626) do
+ActiveRecord::Schema.define(version: 20170720103905) do
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20170715031626) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "fk_rails_298a39267f", using: :btree
     t.index ["user_id"], name: "fk_rails_2e88fb7ce9", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",       limit: 65535
+    t.string   "image"
+    t.integer  "user_id",                  null: false
+    t.integer  "group_id",                 null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
