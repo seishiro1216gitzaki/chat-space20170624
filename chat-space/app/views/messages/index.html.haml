@@ -18,7 +18,12 @@
 
   .footer
     .footer__form
-      %input{placeholder: "type a message", name: "text", class: "type"}
-      %input{type: "submit", class: "submit", name: "commit", value: "SEND"}
+      = form_for([@group,@message]) do |f|
+        .footer__chat__footer-body
+          = f.text_field :body, placeholder:'type a message', class:'message'
+        = f.label :image, class:'chat-file' do
+          = f.file_field :image, class:'image'
+          %i.fa.fa-image
+        = f.submit "Send", class:'submit'
 
 
