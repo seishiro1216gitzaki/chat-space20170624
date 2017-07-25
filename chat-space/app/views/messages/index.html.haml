@@ -22,6 +22,8 @@
             = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
           .body__message
             = message.body
+          .body__image
+            = image_tag message.image.url(:thumb) if message.image.present?
 
 
   .footer
