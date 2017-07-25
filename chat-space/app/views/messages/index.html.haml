@@ -2,18 +2,26 @@
 
 .main
   .header
-    .header__name Groupname
+    .header__name
+      = @group.name
     .group-edit
       = link_to 'Edit',edit_group_path(:id)
 
-    .header__members Member: Steve cook
+    .header__members
+      - @group.users.each do |user|
+        .group_members__list
+          = user.name
 
   .body
     .body-content
-      .body__name Steeve cook
-      .body__time 2017/07/04 22:50
-      .body__message Beast!
-      .body-content
+      - @group.messages.each do |message|
+        .body-content__clearfix
+          .body__name
+            = message.user.name
+          .body__time
+            = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+          .body__message
+            = message.body
 
 
   .footer
