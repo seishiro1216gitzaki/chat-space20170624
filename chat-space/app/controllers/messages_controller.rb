@@ -1,11 +1,17 @@
 class MessagesController < ApplicationController
-  before_action :set_group only: [:index, :create]
+  before_action :set_group, only: [:index, :create]
   def index
     @message = Message.new
   end
 
   def create
     @message = Message.new(create_params)
+    if @message.save
+       redirect_to group_messages_path, notice: "メッセージが送信されました"
+    else
+      flash.now[:alert] = "メッセージが入力されていません"
+      render :index
+    end
   end
 
   private

@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore image file
+*.png
+*.jpeg
+*.jpg
+*.gif
