@@ -15,4 +15,7 @@
         .side__group-name
           = group.name
         .side__group-message
-          メッセージ
+          - if group.messages.last
+            = group.messages.last.body
+          - else
+            "メッセージがありません"

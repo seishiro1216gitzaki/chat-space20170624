@@ -14,17 +14,7 @@
 
   .body
     .body-content
-      - @group.messages.each do |message|
-        .body-content__clearfix
-          .body__name
-            = message.user.name
-          .body__time
-            = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
-          .body__message
-            = message.body
-          .body__image
-            = image_tag message.image.url(:thumb) if message.image.present?
-
+      = render @message
 
   .footer
     .footer__form

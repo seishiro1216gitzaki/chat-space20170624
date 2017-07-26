@@ -1,0 +1,10 @@
+- @group.messages.each do |message|
+  .body-content__clearfix
+    .body__name
+      = message.user.name
+    .body__time
+      = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    .body__message
+      = message.body
+    .body__image
+      = image_tag message.image, size: '200x200' if message.image.present?
