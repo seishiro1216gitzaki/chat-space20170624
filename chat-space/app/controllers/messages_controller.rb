@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
        redirect_to group_messages_path, notice: "メッセージが送信されました"
     else
       flash.now[:alert] = "メッセージが入力されていません"
-      render 'index'
+      render :index
     end
   end
 

@@ -18,7 +18,7 @@
 
   .footer
     .footer__form
-      = form_for([@group,@message]) do |f|
+      = form_for([@group, @message]) do |f|
         .footer__chat__footer-body
           = f.text_field :body, placeholder:'type a message', class:'message'
         = f.label :image, class:'chat-file' do
