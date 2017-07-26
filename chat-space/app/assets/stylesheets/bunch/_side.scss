@@ -48,8 +48,11 @@
      height: 85%;
      width: 100%;
      float: left;
-     .side__groups-content{
-       padding: 20px;
+     // .side__groups-content{
+     //   padding: 20px;
+       .side__group{
+        padding: 20px;
+       }
        .side__group-name {
          font-size: 15px;
          color: $text-white;
@@ -57,9 +60,7 @@
        .side__group-message {
          font-size: 11px;
          color: $text-white;
-
        }
      }
    }
- }
 
