@@ -13,7 +13,4 @@
 /tmp
 
 # Ignore image file
-*.png
-*.jpeg
-*.jpg
-*.gif
+/public

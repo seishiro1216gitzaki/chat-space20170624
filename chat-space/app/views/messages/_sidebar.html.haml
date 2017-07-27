@@ -10,12 +10,14 @@
           %i.fa.fa-cog
 
   .side__groups
-    - current_user.groups.each do |group|
-      .side__groups-content
-        .side__group-name
-          = group.name
-        .side__group-message
-          - if group.messages.last
-            = group.messages.last.body
-          - else
-            "メッセージがありません"
+    .side__groups-content
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .side__group
+            .side__group-name
+              = group.name
+            .side__group-message
+              - if group.messages.last
+                = group.messages.last.body
+              - else
+                "メッセージがありません"
