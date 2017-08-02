@@ -25,19 +25,19 @@ it "is valid with a message and image" do
 it "is invalid without a message and image" do
       message = build(:message, body: nil, image: nil)
       message.valid?
-      expect(message).not_to be_valid
+      expect(message.errors[:body]).to include("を入力してください")
     end
 # group_idが無いと保存できない
 it "is invalid without a group_id" do
       message = build(:message, group_id: nil)
       message.valid?
-      expect(message).not_to be_valid
+      expect(message.errors[:group_id]).to include("を入力してください")
     end
 # user_idが無いと保存できない
 it "is invalid without a user_id" do
       message = build(:message, user_id: nil)
       message.valid?
-      expect(message).not_to be_valid
+      expect(message.errors[:user_id]).to include("を入力してください")
     end
 
   end
