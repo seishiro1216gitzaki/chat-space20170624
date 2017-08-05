@@ -5,7 +5,7 @@ FactoryGirl.define do
     name                  Faker::Name.name
     email                 Faker::Internet.email
     password              pass
-    password_comfirmation pass
+    password_confirmation pass
   end
 
 end
