@@ -16,8 +16,6 @@ class MessagesController < ApplicationController
       flash.now[:alert] = "メッセージが入力されていません"
       render :index
     end
-
-
   end
 
   private
