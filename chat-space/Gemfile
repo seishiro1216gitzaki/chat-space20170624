@@ -47,6 +47,7 @@ group :development, :test do
   gem 'mini_magick'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem "animate-rails"
 end
 
 group :development do
