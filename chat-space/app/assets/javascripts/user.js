@@ -2,14 +2,14 @@ $(function() {
 var search_list = $(".user-search-result");
 
   function appendUser(user) {
-   var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user clearfix">
                  <p class="chat-group-user__name">${user.name}</p>
                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                </div>`
-   search_list.append(html);
+    search_list.append(html);
   }
 
-  function appendNoUser(user) {
+  function AfterNoUser(user) {
     var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${user}</p>
                 </div>`
@@ -17,7 +17,7 @@ var search_list = $(".user-search-result");
   }
 
   function appendMember(user) {
-    var users_list = $("#chat-group-users")
+    var users_list = $("#chat-group-users");
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value=${user.attr('data-user-id')}>
                   <p class='chat-group-user__name'>${user.attr('data-user-name')}</p>
@@ -36,19 +36,19 @@ var search_list = $(".user-search-result");
     })
 
     .done(function(users) {
-     $("#user-search-result").empty();
+      $("#user-search-result").empty();
       if (users.length !== 0) {
        users.forEach(function(user){
          appendUser(user);
        });
       }
       else {
-       appendNoUser("ユーザーがいません");
+        AfterNoUser("ユーザーがいません");
       }
     })
 
     .fail(function() {
-     alert('error')
+      alert('error')
     })
   })
     $(".user-search-result").on("click", ".chat-group-user__btn", function() {
