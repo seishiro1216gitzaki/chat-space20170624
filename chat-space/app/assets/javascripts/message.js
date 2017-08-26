@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // if (message.image != null) {
     var image =(message.image != null) ? `<img src="${message.image}">` : ""
     var html =`
       <div class= "body-content__clearfix" data-message-id="${message.id}">
@@ -17,21 +16,6 @@ $(function(){
           ${image}
         </div>
       </div>`
-      // }
-      // else{
-      // var html =`
-      // <div class= "body-content__clearfix" data-message-id="${message.id}">
-      //   <div class= "body__name">
-      //     ${message.name}
-      //   </div>
-      //   <div class= "body__time">
-      //     ${message.time}
-      //   </div>
-      //   <div class= "body__message">
-      //     ${message.body}
-      //   </div>
-      // </div>`
-      // }
       return html;
     }
     $('#new_message').on('submit', function(e){
@@ -50,8 +34,7 @@ $(function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.body-content').append(html)
-        $('.message').val('');
-        $('.image').val('');
+        $('.message, .image').val('');
         $('.body').animate({scrollTop: $('.body').get(0).scrollHeight}, 'fast');
       })
       .fail(function(){
