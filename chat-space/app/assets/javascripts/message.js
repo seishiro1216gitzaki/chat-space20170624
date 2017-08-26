@@ -51,7 +51,6 @@ $(function(){
         $('.body-content').append(html)
         $('.message').val('');
         $('.image').val('');
-        // $('.body').scrollTop(0);
         $('.body').animate({scrollTop: $('.body').get(0).scrollHeight}, 'fast');
       })
       .fail(function(){
